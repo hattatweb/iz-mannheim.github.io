@@ -1,0 +1,97 @@
+/* =====================
+   NAVIGATION
+===================== */
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  text-align: center;
+  color: #111;
+  background: #fff;
+}
+
+/* NAVIGATION (Schwarz mit weißem Text) */
+.navbar {
+  background-color: #000;
+  padding: 18px 24px; /* ↑ mehr seitlicher Abstand */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #222;
+  backdrop-filter: blur(10px);
+}
+
+/* optional, falls du text + nav items weiter einrücken willst */
+.navbar .logo,
+.nav-menu {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+
+
+
+
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+
+
+
+
+
+
+/* Navigation Links */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff; /* weißer Text */
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover‑Effekt */
+.nav-menu a:hover {
+  color: #ddd;
+  transform: translateY(-2px);
+}
+
+/* Hamburger (mobil) */
+.hamburger {
+  display: none;
+  font-size: 1.9rem;
+  cursor: pointer;
+  color: #fff;
+  margin-right: 20px;
+}
+
+.nav-menu.active {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: #000;
+  width: 100%;
+  padding: 15px 0;
+  position: absolute;
+  top: 60px;
+}

@@ -1,0 +1,29 @@
+/* =====================
+   RESPONSIVE MEDIA QUERIES
+===================== */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+  }
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .container {
+    width: 95%;
+    margin: 30px auto;
+  }
+}
