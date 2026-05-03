@@ -207,6 +207,7 @@ img {
   grid-template-columns: repeat(3, 1fr); /* 3 Karten pro Zeile */
   justify-items: center;
   margin-bottom: 40px;
+  overflow: visible;
 }
 
 @media (max-width: 992px) {
@@ -239,7 +240,7 @@ img {
 .menu-item {
   width: 100%;
   max-width: 320px;
-  min-height: 400px; /* feste Höhe */
+  height: 400px; /* explizite Höhe damit flip-inner 100% ausfüllen kann */
   perspective: 1200px;
   cursor: pointer;
 }
@@ -817,4 +818,6 @@ h2 {
 
 .accordion-toggle.open + .accordion-body {
   padding: 20px 12px;
+  /* Must be visible so 3D flip cards are not clipped */
+  overflow: visible;
 }
