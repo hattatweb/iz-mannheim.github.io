@@ -203,7 +203,7 @@ img {
 ===================== */
 .menu-grid {
   display: grid;
-  gap: 26px;
+  gap: 40px;
   grid-template-columns: repeat(3, 1fr); /* 3 Karten pro Zeile */
   justify-items: center;
   margin-bottom: 40px;
@@ -220,6 +220,18 @@ img {
     grid-template-columns: 1fr; /* 1 pro Zeile auf Mobil */
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* =====================
    FLIP-CARD STYLES
@@ -240,12 +252,7 @@ img {
   transform-style: preserve-3d;
 }
 
-/* Hover auf Desktop */
-@media (hover: hover) {
-  .menu-item:hover .menu-flip-inner {
-    transform: rotateY(180deg);
-  }
-}
+
 
 /* Click / Tap auf Mobile */
 .menu-item.active .menu-flip-inner {
@@ -269,21 +276,33 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background: #fff;
+  background: #f6b443;
+  color: #222;
 }
 
-.menu-flip-front img {
+.menu-flip-front_img {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  height: auto;
+  object-fit:cover;
 }
+
+
+.menu-flip-front h4 span {
+  display: inline-block;
+  max-width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
 
 .menu-flip-back {
-  background: #f9f9f9;
+  background: #f6b443;
   color: #222;
   padding: 16px;
   transform: rotateY(180deg);
-  text-align: left;
+  text-align:center;
   font-size: 0.95rem;
   display: flex;
   flex-direction: column;
@@ -301,6 +320,30 @@ img {
   line-height: 1.4;
 }
 
+
+
+
+.menu-image-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* perfekt für Food */
+  background: #f6b443; /* gleiche Farbe wie Card */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+.menu-image-wrapper img {
+  width: 80%;
+  height: 100%;
+  object-fit: contain; /* füllt den Bereich */
+}
+
+
+
+
+
 /* =====================
    CARD HOVER & SHADOW
 ===================== */
@@ -310,7 +353,34 @@ img {
 }
 
 
+/* =====================
+   CARD Logo
+===================== */
 
+.card-logo {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: auto;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+
+
+
+.card-logo-back {
+  position: absolute;
+  bottom: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: auto;
+  opacity: 0.2;
+  pointer-events: none;
+}
 
 
 /* =====================
@@ -687,17 +757,64 @@ h2 {
 }
 
 /* ===== MOBILE ===== */
-@media (max-width: 768px) {
-  .pdf-container {
-    display: none; /* PDF ausblenden */
-  }
 
-  .menu-mobile {
-    display: block; /* Button anzeigen */
-  }
 
-  .menu-mobile .btn {
-    display: inline-block;
-    margin-top: 20px;
-  }
+
+/* =====================
+   ACCORDION MENU SECTIONS
+===================== */
+.accordion-section {
+  margin-bottom: 16px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.accordion-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  background: rgba(246, 180, 67, 0.15);
+  border: 2px solid #f6b443;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, border-radius 0.3s ease;
+  text-align: left;
+}
+
+.accordion-toggle:hover {
+  background: rgba(246, 180, 67, 0.28);
+}
+
+.accordion-toggle.open {
+  border-radius: 10px 10px 0 0;
+  background: rgba(246, 180, 67, 0.25);
+}
+
+.accordion-icon {
+  font-size: 1rem;
+  transition: transform 0.35s ease;
+  flex-shrink: 0;
+}
+
+.accordion-toggle.open .accordion-icon {
+  transform: rotate(180deg);
+}
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease;
+  border: 2px solid #f6b443;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  padding: 0 12px;
+}
+
+.accordion-toggle.open + .accordion-body {
+  padding: 20px 12px;
 }
