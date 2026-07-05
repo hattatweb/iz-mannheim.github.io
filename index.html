@@ -15,6 +15,57 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   />
+
+  <style>
+    /* --- Delivery Section --- */
+    .delivery-section {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .delivery-section h2 {
+      margin-bottom: 30px;
+    }
+
+    .delivery-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .delivery-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      color: #fff;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    .delivery-btn i {
+      font-size: 1.3rem;
+    }
+
+    .delivery-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+    }
+
+    .delivery-btn.ubereats {
+      background-color: #06C167;
+    }
+
+    .delivery-btn.lieferando {
+      background-color: #FF8000;
+    }
+  </style>
+  
 </head>
 <body>
 
@@ -80,6 +131,31 @@
   </main>
 
 
+  <!-- Lieferservice -->
+  <section class="delivery-section">
+    <h2>Jetzt auch ganz einfach nach Hause bestellen</h2>
+    <div class="delivery-buttons">
+      <a
+        href="https://www.ubereats.com/de/store/iz-uigurisches-restaurant-mannheim/Ur824UdqWp-X-8Qj6ao86g?diningMode=DELIVERY&surfaceName="
+        class="delivery-btn ubereats"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fa-solid fa-bag-shopping"></i>
+        Bei Uber Eats bestellen
+      </a>
+      <a
+        href="https://www.lieferando.de/speisekarte/iz-uigurisches-restaurant-mannheim"
+        class="delivery-btn lieferando"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fa-solid fa-motorcycle"></i>
+        Bei Lieferando bestellen
+      </a>
+    </div>
+  </section>
+
 
    <h2>Mal etwas Neues oder Anderes für die Mittagspause in Mannheim?</h2>
     <div class="pdf-actions"> 
@@ -87,8 +163,6 @@
       Mittagstisch herunterladen (PDF-Datei)
     </a>
     </div>
-
-
 
 
   
